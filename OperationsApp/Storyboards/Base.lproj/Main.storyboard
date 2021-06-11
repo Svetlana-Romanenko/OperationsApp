@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Filtered Image View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FilteredImageViewController" customModule="OperationsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uC5-Fg-Wb1">
+                                <rect key="frame" x="108.66666666666669" y="268.33333333333331" width="173" height="30"/>
+                                <state key="normal" title="Загрузить изображение"/>
+                                <connections>
+                                    <action selector="downloadButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Atz-Rc-vBG"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VHQ-MD-sLZ">
+                                <rect key="frame" x="86.333333333333329" y="318.33333333333331" width="217.33333333333337" height="217.33333333333331"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="217.33333333333331" id="jB6-cu-4Fk"/>
+                                    <constraint firstAttribute="width" secondItem="VHQ-MD-sLZ" secondAttribute="height" multiplier="1:1" id="ufb-qK-WaC"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6v-Ci-a13">
+                                <rect key="frame" x="87" y="555.66666666666663" width="53" height="30"/>
+                                <state key="normal" title="Фильтр"/>
+                                <connections>
+                                    <action selector="filterImageButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="b6k-7Z-UWH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpf-XQ-VsU">
+                                <rect key="frame" x="247" y="555.66666666666663" width="56" height="30"/>
+                                <state key="normal" title="Отмена">
+                                    <color key="titleColor" systemColor="systemPinkColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="osV-eN-826"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ZaZ-Ac-TAS">
+                                <rect key="frame" x="185" y="412" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="L6v-Ci-a13" firstAttribute="top" secondItem="VHQ-MD-sLZ" secondAttribute="bottom" constant="20" id="96B-mX-eV3"/>
+                            <constraint firstItem="ZaZ-Ac-TAS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FhY-tN-vK4"/>
+                            <constraint firstItem="ZaZ-Ac-TAS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J9y-r8-gae"/>
+                            <constraint firstItem="wpf-XQ-VsU" firstAttribute="top" secondItem="VHQ-MD-sLZ" secondAttribute="bottom" constant="20" id="KHs-d7-gh4"/>
+                            <constraint firstItem="VHQ-MD-sLZ" firstAttribute="top" secondItem="uC5-Fg-Wb1" secondAttribute="bottom" constant="20" id="LOt-dY-tLh"/>
+                            <constraint firstItem="VHQ-MD-sLZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NqN-XW-MAf"/>
+                            <constraint firstItem="wpf-XQ-VsU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="L6v-Ci-a13" secondAttribute="trailing" constant="8" symbolic="YES" id="dYZ-tO-Zn6"/>
+                            <constraint firstItem="L6v-Ci-a13" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="iuQ-nY-gP2"/>
+                            <constraint firstItem="uC5-Fg-Wb1" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="w26-cW-Uqb"/>
+                            <constraint firstItem="VHQ-MD-sLZ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="wc0-s9-NrH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wpf-XQ-VsU" secondAttribute="trailing" constant="87" id="x5m-oL-Tvv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="VHQ-MD-sLZ" id="Bzx-O1-bkb"/>
+                        <outlet property="indicator" destination="ZaZ-Ac-TAS" id="8QY-2p-vqP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="35" y="94"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
