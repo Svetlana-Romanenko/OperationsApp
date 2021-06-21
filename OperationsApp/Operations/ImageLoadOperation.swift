@@ -24,10 +24,10 @@ class ImageLoadOperation: AsyncOperation {
     override func main() {
         if self.isCancelled { return }
         if let imageURL = url {
-            NetworkManager.shared.asyncImageLoad(imageURL: imageURL) { [unowned self] image in
-                if self.isCancelled { return }
-                    self.outputImage = image
-                    self.state = .finished
+            NetworkManager.shared.asyncImageLoad(imageURL: imageURL) { [weak self] image in
+                if self != nil && self!.isCancelled { return }
+                self?.outputImage = image
+                self?.state = .finished
             }
         }
     }

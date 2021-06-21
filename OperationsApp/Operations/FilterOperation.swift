@@ -37,6 +37,9 @@ class FilterOperation: Operation {
     }
     
     private func filterImage(image: UIImage?) -> UIImage? {
-        return image?.resized(toWidth: 60)
+        guard let image = image else {
+            return nil
+        }
+        return image.resized(toWidth: 60)
     }
 }
